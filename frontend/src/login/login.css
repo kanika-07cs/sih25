@@ -21,7 +21,7 @@
 }
 
 .brand-logo h2 {
-  color: #2196f3;
+  color: #005f48;
   margin-bottom: 20px;
 }
 
@@ -42,7 +42,7 @@ h3 {
 }
 
 .login-form label {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -65,13 +65,13 @@ h3 {
 }
 
 .forgot-password a {
-  font-size: 13px;
-  color: #2196f3;
+  font-size: 16px;
+  color: #005f48;
   text-decoration: none;
 }
 
 .login-btn {
-  background: #2196f3;
+  background: #318671;
   color: #fff;
   padding: 12px;
   border: none;
@@ -86,11 +86,11 @@ h3 {
 
 .signup-text {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .signup-text .link {
-  color: #2196f3;
+  color: #005f48;
   cursor: pointer;
   font-weight: 500;
 }
@@ -175,7 +175,7 @@ h3 {
 .modal-box h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: #2a7ae4;
+  color: #005f48;
 }
 
 /* Register Form Inputs */
@@ -219,12 +219,12 @@ h3 {
 }
 
 .register-form button[type="submit"] {
-  background: #2a7ae4;
+  background: #297864;
   color: #fff;
 }
 
 .register-form button[type="submit"]:hover {
-  background: #1d5ec1;
+  background: #005f48;
 }
 
 .close-btn {
@@ -233,12 +233,7 @@ h3 {
 }
 
 .close-btn:hover {
-  background: #ddd;
+  background: #f56a6a;
 }
 
-/* Small fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
 

@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
 
-        {/* Patient layout with nested routes */}
-        <Route path="/" element={<PatientLayout />}>
+        <Route path="/patient-home" element={<PatientLayout />}>
+        <Route index element={<Pdashboard />} />
           <Route path="dashboard-patient" element={<Pdashboard />} />
           <Route path="therapists-patient" element={<Ptherapist />} />
           <Route path="schedule-patient" element={<Pschedule />} />
