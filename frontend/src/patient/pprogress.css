@@ -1,0 +1,132 @@
+/* Container with gradient background */
+.progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5, #f9fafb);
+  min-height: 100vh;
+}
+
+/* Glass effect card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  flex: 1;
+  min-width: 350px;
+  transition: transform 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111827;
+}
+
+/* Stats with gradient text */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.stat {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.stat.green {
+  background-image: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.stat.red {
+  background-image: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.stat.yellow {
+  background-image: linear-gradient(90deg, #facc15, #eab308);
+}
+
+.stats p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #374151;
+}
+
+/* Progress bar with animation */
+.progress-bar {
+  margin-bottom: 25px;
+}
+
+.bar {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 6px;
+  animation: fillAnimation 2s forwards;
+}
+
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+.small-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* Milestones */
+.milestone {
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-left: 4px solid #9ca3af;
+  border-radius: 6px;
+  background: #f9fafb;
+  transition: background 0.2s;
+}
+
+.milestone:hover {
+  background: #f3f4f6;
+}
+
+.milestone span {
+  font-weight: 600;
+  color: #111827;
+}
+
+.milestone .date {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.milestone.complete {
+  border-left-color: #22c55e;
+  background: #ecfdf5;
+}

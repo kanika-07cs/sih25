@@ -1,0 +1,127 @@
+.therapist-wrapper {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.filter select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.therapist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.therapist-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.therapist-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.specialty {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.details {
+  font-size: 13px;
+  color: #718096;
+}
+
+.rating {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #f6ad55;
+}
+
+.rating span {
+  color: #4a5568;
+  font-size: 12px;
+}
+
+.availability span {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #e6f9f0;
+  color: #0f9d58;
+  border-radius: 12px;
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.fee {
+  font-weight: 600;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.languages {
+  margin: 6px 0 12px;
+}
+
+.lang-tag {
+  display: inline-block;
+  background: #edf2f7;
+  color: #2d3748;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-right: 6px;
+}
+
+.book-btn {
+  background: #10b981;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #0d9469;
+}

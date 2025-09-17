@@ -6,13 +6,14 @@ class UserModel {
     return rows[0];
   }
 
-  static async createUser(name, email, password, phone) {
-    const [result] = await db.query(
-      "INSERT INTO users (name, email, password, phone) VALUES (?, ?, ?, ?)",
-      [name, email, password, phone]
-    );
-    return result.insertId;
-  }
+  static async createUser(name, email, password, phone, role) {
+  const [result] = await db.query(
+    "INSERT INTO users (name, email, password, phone, role) VALUES (?, ?, ?, ?, ?)",
+    [name, email, password, phone, role]
+  );
+  return result.insertId;
+}
+
 }
 
 module.exports = UserModel;

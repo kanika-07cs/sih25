@@ -1,67 +1,103 @@
 import React, { useState } from "react";
+import { FaBell } from "react-icons/fa";
+import "../patient/pdashboard.css";
 
-const PatientDashboard = () => {
-  const [patientName, setPatientName] = useState("Priya");
-  const [upcomingSessions, setUpcomingSessions] = useState([
-    { id: 1, date: "2025-09-20", type: "Panchakarma Therapy", status: "Scheduled" },
-    { id: 2, date: "2025-09-25", type: "Abhyanga Massage", status: "Scheduled" },
-  ]);
-  const [healthProgress, setHealthProgress] = useState([
-    { week: 1, score: 60 },
-    { week: 2, score: 65 },
-    { week: 3, score: 70 },
-    { week: 4, score: 80 },
-  ]);
+export default function PDashboard() {
+  const [activeTab, setActiveTab] = useState("Dashboard");
+  const [symptoms, setSymptoms] = useState("");
+  const [concerns, setConcerns] = useState([]);
+  const concernOptions = [
+    "Stress & Anxiety",
+    "Digestive Issues",
+    "Sleep Problems",
+    "Joint Pain",
+    "Headaches",
+    "Skin Issues",
+    "Back Pain",
+    "Fatigue",
+  ];
+
+  const handleConcernClick = (concern) => {
+    if (!concerns.includes(concern)) {
+      setConcerns([...concerns, concern]);
+    }
+  };
 
   return (
-    <div>
-      <h1>Welcome, {patientName}</h1>
+    <div className="dashboard-wrapper">
 
-      <section id="dashboard" className="dashboard-section">
-        <h2>Upcoming Sessions</h2>
-        <div className="sessions-list">
-          {upcomingSessions.map((session) => (
-            <div key={session.id} className="session-card">
-              <h3>{session.type}</h3>
-              <p>Date: {session.date}</p>
-              <p>Status: {session.status}</p>
+      {/* Main Dashboard */}
+      <div className="dashboard-content">
+        {/* Greeting & Stats */}
+        <div className="greeting-box">
+          <h2>Hello, Priya</h2>
+          <p>Track your Panchakarma journey with ease.</p>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <h3>12</h3>
+              <p>Sessions Completed</p>
             </div>
-          ))}
+            <div className="stat-card">
+              <h3>3</h3>
+              <p>Active Therapists</p>
+            </div>
+            <div className="stat-card">
+              <h3 className="progress">75%</h3>
+              <p>Treatment Progress</p>
+            </div>
+          </div>
         </div>
 
-        <h2>Health Progress</h2>
-        <div className="progress-bars">
-          {healthProgress.map((week) => (
-            <div key={week.week} className="progress-bar">
-              <span>Week {week.week}</span>
-              <div className="progress-container" style={{ border: "1px solid #ccc", width: "100%", height: "20px", borderRadius: "5px" }}>
-                <div
-                  className="progress-fill"
-                  style={{
-                    width: `${week.score}%`,
-                    backgroundColor: "#4caf50",
-                    height: "100%",
-                    textAlign: "center",
-                    color: "white",
-                    borderRadius: "5px"
-                  }}
-                >
-                  {week.score}%
-                </div>
+        <div className="main-grid">
+          {/* How are you feeling today */}
+          <div className="feeling-box">
+            <h3>How are you feeling today?</h3>
+            <textarea
+              placeholder="Describe your symptoms, concerns, or how you're feeling..."
+              value={symptoms}
+              onChange={(e) => setSymptoms(e.target.value)}
+            />
+            <div className="concerns">
+              <p>Common concerns:</p>
+              <div className="tags">
+                {concernOptions.map((c) => (
+                  <span
+                    key={c}
+                    className={`tag ${concerns.includes(c) ? "selected" : ""}`}
+                    onClick={() => handleConcernClick(c)}
+                  >
+                    {c}
+                  </span>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <h2>Quick Actions</h2>
-        <div className="actions">
-          <button onClick={() => alert("Book Session clicked")}>Book Session</button>
-          <button onClick={() => alert("View Summary clicked")}>View Summary</button>
-          <button onClick={() => alert("Notifications clicked")}>Notifications</button>
+          {/* Schedule & Alerts */}
+          <div className="schedule-box">
+            <h3>Schedule & Alerts</h3>
+            <div className="tabs">
+              <button className="active">Upcoming Sessions</button>
+              <button>Calendar View</button>
+            </div>
+            <div className="session-card">
+              <h4>Abhyanga Massage</h4>
+              <p>
+                with Dr. Priya Sharma <br />
+                <span className="session-time">Today | 2:00 PM (90 mins)</span>
+              </p>
+              <span className="status confirmed">Confirmed</span>
+            </div>
+            <div className="wellness-tip">
+              <h4>💡 Daily Wellness Tip</h4>
+              <p>
+                Drink warm water with a pinch of turmeric every morning to boost
+                immunity and reduce inflammation.
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
-};
-
-export default PatientDashboard;
+}
